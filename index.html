@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar - HTML,CSS</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+     <!---Internal stylesheet code-->
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family:'Times New Roman', Times, serif;
+        
+    }
+
+   .logo{
+    font-size:2rem;
+    font-weight:bold;
+   }
+
+   nav{
+    background-color:#1a237e;
+    color:aliceblue;
+    padding:3rem 1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+   }
+
+   .nav-links a{
+    color:white;
+    text-decoration: none;
+    padding:10px 12px;
+    transition:background 0.3s;
+    font-size:23px;
+   }
+
+   .nav-links a:hover{
+    background-color:#3949ab;
+    border-radius: 5px;
+   }
+
+   .menu-icon{
+    display:none;
+    font-size:1.5rem;
+    cursor:pointer;
+   }
+
+   .nav-links{
+     list-style:none;
+     display:flex;
+     gap:1rem;
+
+   }
+
+   /*media query responsive */
+
+@media(max-width:768px){
+.nav-links{
+    display:none;
+    flex-direction: column;
+    position:absolute;
+    top:80px;
+    right:4px;
+    width:250px;
+    padding:10px;
+     background-color:rgb(179, 179, 179);
+}
+
+.nav-links.show{
+    display:flex;
+}
+
+.menu-icon{
+    display:block;
+}
+
+.nav-links li{
+    text-align: center;
+    margin:10px 0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+    <!---Main Content-->
+<nav>
+ <div class="logo">Logo of your Site</div>
+ <i class ="fas fa-bars menu-icon" onclick="toggleMenuButton()"></i>
+ <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact Us</a></li>
+ </ul>
+</nav>
+
+<!---Script-->
+
+<script>
+ 
+ function toggleMenuButton(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+</script>
+
+</body>
+</html>
